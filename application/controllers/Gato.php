@@ -120,8 +120,22 @@ class Gato extends CI_Controller
 		$this->load->view('header', $headerContent);
 
 		// Si no tengo ID
-		if ($id == "" || !is_numeric($id)) 
-			$id = 0;
+		if ($id == "" || !is_numeric($id)) {
+			// Si no se recibio ID, cargo un error
+			$pageContent = array(
+				"content" => $this->load->view('gatos/error',
+					array(
+						"mensaje" => "No se encontro el gato solicitado."
+					),
+					TRUE
+				)
+			);
+
+			// Cargamos la main page
+			$this->load->view('main', $pageContent);
+			
+			return;
+		}
 
 		// Cargo el ID en el modelo
 		$this->gato_model->gatoId = $id;
