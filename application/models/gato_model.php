@@ -39,14 +39,9 @@ class Gato_model extends CI_Model
 		$this->db->insert('gatos', $this);
 	}
 
-	/*
-	public function update_entry()
+	public function update()
 	{
-		$this->title = $_POST['title'];
-		$this->content = $_POST['content'];
-		$this->date = time();
-
-		$this->db->update('entries', $this, array('id' => $_POST['id']));
+		$this->db->update('gatos', $this, array('gatoId' => $this->gatoId));
 	}
-	*/
+
 }

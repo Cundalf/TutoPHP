@@ -166,9 +166,9 @@ class Gato extends CI_Controller
 				);
 			} else {
 
-				//$this->gato_model->gatoNombre = $nombre;
-				//$this->gato_model->gatoColor = $color;
-				//$this->gato_model->save();
+				$this->gato_model->gatoNombre = $nombre;
+				$this->gato_model->gatoColor = $color;
+				$this->gato_model->update();
 
 				// Contenido para la Main Page. Cargo la vista de finalizacion de carga.
 				$pageContent = array(
