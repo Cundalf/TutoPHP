@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
-<div class="container">
+<div class="container animate__animated animate__fadeIn">
 	<? if (isset($content)) : ?>
 		<?= $content; ?>
 	<? else : ?>

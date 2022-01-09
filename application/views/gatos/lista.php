@@ -3,6 +3,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
 <h3>Lista de gatos</h3>
+
+<hr>
+
 <div class="table-responsive">
 	<table class="table table-hover table-striped">
 		<thead>
@@ -10,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<th scope="col">#</th>
 				<th scope="col">Nombre</th>
 				<th scope="col">Color</th>
-				<th scope="col"></th>
+				<th scope="col">Opciones</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<td><?= $cat->gatoNombre; ?></td>
 						<td><?= $cat->gatoColor; ?></td>
 						<td>
-							<a href="<?= base_url("gato/edit/" . $cat->gatoId); ?>"><i class="fas fa-pencil-alt text-info pointer"></i></a>
+							<a href="<?= base_url("gato/edit/" . $cat->gatoId); ?>"><i class="fas fa-pencil-alt text-info pointer" style="margin-right: 6px;"></i></a>
 							<i class="fas fa-trash-alt text-danger pointer delete" data-id="<?= $cat->gatoId; ?>"></i>
 						</td>
 					</tr>
