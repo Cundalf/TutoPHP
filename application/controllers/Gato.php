@@ -113,7 +113,7 @@ class Gato extends CI_Controller
 
 		// Datos para el contenido del header
 		$headerContent = array(
-			"page" => "new"
+			"page" => "edit"
 		);
 
 		// Cargamos el header
