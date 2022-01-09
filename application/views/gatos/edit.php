@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<h3>Modificando Gato #<?="" ?></h3>
+<h3>Modificando Gato #<?=$id ?></h3>
 <hr>
 
 <form method="POST" action="">
