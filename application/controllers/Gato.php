@@ -101,4 +101,29 @@ class Gato extends CI_Controller
 		
 		var_dump($this->gato_model->getAllCats());
 	}
+	
+	public function delete() {
+		// Recibimos ID del front
+		$id = $this->input->post('id');
+		
+		// Variable de retorno
+		$ret = new stdClass();
+		
+		// Validar ID
+		if($id == "") {
+			$ret->error = 1;
+			echo json_encode($ret);
+			return;
+		}
+
+		// Cargamos nuestro modelo
+		$this->load->model("gato_model");
+		
+		$this->gato_model->gatoId = $id;
+		$this->gato_model->delete();
+
+		$ret->error = 0;
+		echo json_encode($ret);
+		return;
+	}
 }
