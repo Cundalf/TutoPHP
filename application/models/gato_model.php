@@ -17,6 +17,21 @@ class Gato_model extends CI_Model
 		$query = $this->db->get('gatos');
 		return $query->result();
 	}
+
+	public function load(): bool
+	{
+		$query = $this->db->get_where('gatos', array('gatoId' => $this->gatoId));
+		$result = $query->result();
+
+		if(count($result) > 0) {
+			$this->gatoNombre = $result[0]->gatoNombre;
+			$this->gatoColor = $result[0]->gatoColor;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	public function save()
 	{
@@ -24,14 +39,9 @@ class Gato_model extends CI_Model
 		$this->db->insert('gatos', $this);
 	}
 
-	/*
-	public function update_entry()
+	public function update()
 	{
-		$this->title = $_POST['title'];
-		$this->content = $_POST['content'];
-		$this->date = time();
-
-		$this->db->update('entries', $this, array('id' => $_POST['id']));
+		$this->db->update('gatos', $this, array('gatoId' => $this->gatoId));
 	}
-	*/
+
 }
