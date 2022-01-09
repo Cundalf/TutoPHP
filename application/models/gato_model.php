@@ -39,9 +39,13 @@ class Gato_model extends CI_Model
 		$this->db->insert('gatos', $this);
 	}
 
+	public function delete()
+	{
+		$this->db->delete('gatos', array('gatoId' => $this->gatoId));
+	}
+
 	public function update()
 	{
 		$this->db->update('gatos', $this, array('gatoId' => $this->gatoId));
 	}
-
 }

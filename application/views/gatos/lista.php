@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<td><?= $cat->gatoColor; ?></td>
 						<td>
 							<a href="<?= base_url("gato/edit/" . $cat->gatoId); ?>"><i class="fas fa-pencil-alt text-info pointer"></i></a>
-							<i class="fas fa-trash-alt text-danger pointer"></i>
+							<i class="fas fa-trash-alt text-danger pointer delete" data-id="<?= $cat->gatoId; ?>"></i>
 						</td>
 					</tr>
 				<? endforeach; ?>
